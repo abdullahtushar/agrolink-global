@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Active Exporters — AgroLink{% endblock %}
+
+{% block content %}
+<div class="container section">
+    <h1 class="section-title">🚢 Active Exporters</h1>
+    <div class="grid grid-3">
+        {% for exporter in exporters %}
+        <div class="card" style="padding: 1.5rem; text-align: center; border-radius: var(--radius-md);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🧑‍💼</div>
+            <h3 style="margin-bottom: 0.5rem; color: var(--clr-text-dark);">{{ exporter.company_name|default:exporter.get_full_name|default:exporter.username }}</h3>
+            <p style="color: var(--clr-text-light); margin-bottom: 0.5rem;">📍 {{ exporter.district|default:"Not specified" }}</p>
+            <p style="color: var(--clr-text); font-weight: 500;">Joined: {{ exporter.date_joined|date:"M d, Y" }}</p>
+        </div>
+        {% empty %}
+        <p style="grid-column: 1 / -1; text-align: center; padding: 2rem;">No exporters found.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

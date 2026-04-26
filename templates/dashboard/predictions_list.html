@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Profitable Crop Predictions — AgroLink{% endblock %}
+
+{% block content %}
+<div class="container section">
+    <div style="text-align: center; margin-bottom: 3rem;">
+        <h1 class="section-title" style="margin-bottom: 0.5rem;">📈 Profitable Crop Predictions</h1>
+        <p style="color: var(--clr-text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Our intelligent system analyzes market demand and export prices to predict the most profitable crops for the upcoming month.</p>
+    </div>
+
+    <div class="grid grid-3">
+        {% for pred in predictions %}
+        <div class="card" style="padding: 0; overflow: hidden; border-radius: var(--radius-md); border-top: 5px solid var(--clr-primary);">
+            {% if pred.image_url %}
+                <img src="{{ pred.image_url }}" alt="{{ pred.name }}" style="width: 100%; height: 200px; object-fit: cover;">
+            {% else %}
+                <div style="height: 200px; background: var(--clr-surface-alt); display: flex; align-items: center; justify-content: center; font-size: 5rem;">
+                    {% if 'Tomato' in pred.name %}🍅
+                    {% elif 'Chili' in pred.name %}🌶️
+                    {% elif 'Eggplant' in pred.name %}🍆
+                    {% elif 'Gourd' in pred.name %}🥒
+                    {% elif 'Cauliflower' in pred.name %}🥦
+                    {% elif 'Onion' in pred.name %}🧅
+                    {% elif 'Potato' in pred.name %}🥔
+                    {% else %}🥬{% endif %}
+                </div>
+            {% endif %}
+            <div style="padding: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.5rem; color: var(--clr-text-dark); margin: 0;">{{ pred.name }}</h3>
+                    <span class="badge badge-success" style="font-size: 0.9rem;">High Demand</span>
+                </div>
+                
+                <div style="background: #f8fafc; padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: var(--clr-text-light);">Target Region:</span>
+                        <strong style="color: var(--clr-text-dark);">{{ pred.region }}</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="color: var(--clr-text-light);">Est. Profit Margin:</span>
+                        <strong style="color: var(--clr-primary); font-size: 1.1rem;">৳{{ pred.profit }} / kg</strong>
+                    </div>
+                </div>
+                
+                <p style="color: var(--clr-text); font-size: 0.95rem; line-height: 1.5;">Based on current European and Middle Eastern export trends, {{ pred.name }} shows a very strong profit margin potential for local farmers.</p>
+            </div>
+        </div>
+        {% empty %}
+        <p style="grid-column: 1 / -1; text-align: center; padding: 2rem;">No predictions available right now.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

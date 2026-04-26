@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block title %}Exporter Dashboard — AgroLink Global{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>🚢 Exporter Dashboard</h1>
+        <p>Search available crops from farmers across Bangladesh</p>
+    </div>
+
+    <!-- Predictions Card -->
+    {% if predictions %}
+    <div class="card" style="margin-bottom: 2rem; border-left: 4px solid var(--clr-primary);">
+        <h2 class="section-title" style="margin-bottom: 1rem;">📈 Top Profitable Crops (Next Month)</h2>
+        <div class="grid grid-3">
+            {% for pred in predictions %}
+            <div class="card" style="background: var(--clr-surface-alt); padding: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <strong>{{ pred.name }}</strong>
+                    <span class="badge badge-info">{{ pred.region }}</span>
+                </div>
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--clr-primary);">
+                    Est. Profit: ৳{{ pred.profit }}/kg
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="stat-cards">
+        <div class="stat-card">
+            <div class="stat-icon">🥬</div>
+            <div class="stat-value">{{ total_available }}</div>
+            <div class="stat-label">Available Listings</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">💬</div>
+            <div class="stat-value">{{ total_inquiries }}</div>
+            <div class="stat-label">My Inquiries</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">⏳</div>
+            <div class="stat-value">{{ pending_inquiries }}</div>
+            <div class="stat-label">Pending Response</div>
+        </div>
+    </div>
+
+    <!-- Search & Filters -->
+    <div class="filter-bar">
+        <form method="get">
+            <div class="form-group" style="flex:2;">
+                <label>Search</label>
+                <input type="text" name="q" value="{{ search_query }}" class="form-input" placeholder="Search crops, districts, farmers...">
+            </div>
+            <div class="form-group">
+                <label>District</label>
+                <select name="district" class="form-input">
+                    <option value="">All Districts</option>
+                    {% for code, name in districts %}
+                    <option value="{{ code }}" {% if district_filter == code %}selected{% endif %}>{{ name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Crop Type</label>
+                <select name="crop" class="form-input">
+                    <option value="">All Crops</option>
+                    {% for veg in vegetables %}
+                    <option value="{{ veg.id }}" {% if crop_filter == veg.id|stringformat:"d" %}selected{% endif %}>{{ veg.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Season</label>
+                <select name="season" class="form-input">
+                    <option value="">All Seasons</option>
+                    {% for code, name in seasons %}
+                    <option value="{{ code }}" {% if season_filter == code %}selected{% endif %}>{{ name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>&nbsp;</label>
+                <button type="submit" class="btn btn-primary btn-block">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Results -->
+    {% if listings %}
+    <div class="grid grid-3">
+        {% for listing in listings %}
+        <div class="card crop-card" style="padding-top: 0; overflow: hidden;">
+            {% if listing.vegetable.image %}
+                <img src="{{ listing.vegetable.image.url }}" alt="{{ listing.vegetable.name }}" style="width: 100%; height: 160px; object-fit: cover; margin-bottom: 1rem;">
+            {% else %}
+                <div style="height: 160px; background: var(--clr-surface-alt); display: flex; align-items: center; justify-content: center; font-size: 4rem; margin-bottom: 1rem;">🥬</div>
+            {% endif %}
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+                <div class="crop-header">
+                    <span class="crop-name">{{ listing.vegetable.name }}</span>
+                    <span class="badge badge-success">Available</span>
+                </div>
+                <div class="crop-meta">
+                <span>📍 {{ listing.district }}</span>
+                <span>🌱 {{ listing.get_season_display }}</span>
+                <span>⚖️ {{ listing.quantity_kg }} kg</span>
+            </div>
+            <div class="crop-price">৳{{ listing.price_per_kg }}/kg</div>
+            <p style="font-size:.88rem;color:var(--clr-text-light);margin-bottom:.75rem;">
+                By <strong>{{ listing.farmer.get_full_name }}</strong> · {{ listing.district }}
+            </p>
+            {% if listing.harvest_date %}
+            <p style="font-size:.82rem;color:var(--clr-text-light);margin-bottom:.75rem;">
+                🗓️ Harvest: {{ listing.harvest_date|date:"M d, Y" }}
+            </p>
+            {% endif %}
+                <div class="crop-actions">
+                    <a href="{% url 'listing_detail' listing.pk %}" class="btn btn-secondary btn-sm">View Details</a>
+                    <a href="{% url 'send_inquiry' listing.pk %}" class="btn btn-primary btn-sm">Send Inquiry</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">
+        <div class="empty-icon">🔍</div>
+        <h3>No listings found</h3>
+        <p>Try adjusting your search filters or check back later for new listings.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

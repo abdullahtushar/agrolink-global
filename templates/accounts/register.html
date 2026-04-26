@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block title %}Register — AgroLink Global{% endblock %}
+
+{% block content %}
+<div class="container" style="padding:2rem 1.5rem;">
+    <div class="form-card">
+        <h2>Create Your Account</h2>
+        <p class="form-subtitle">Join AgroLink Global and start trading today</p>
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+
+            <!-- Role Selection -->
+            <div class="form-group">
+                <label>I am a:</label>
+                <div class="role-selector">
+                    <label class="role-option {% if form.role.value == 'farmer' or not form.role.value %}active{% endif %}" onclick="this.parentElement.querySelectorAll('.role-option').forEach(e=>e.classList.remove('active'));this.classList.add('active');">
+                        <input type="radio" name="role" value="farmer" {% if form.role.value == 'farmer' or not form.role.value %}checked{% endif %}>
+                        👨‍🌾 Farmer
+                    </label>
+                    <label class="role-option {% if form.role.value == 'exporter' %}active{% endif %}" onclick="this.parentElement.querySelectorAll('.role-option').forEach(e=>e.classList.remove('active'));this.classList.add('active');">
+                        <input type="radio" name="role" value="exporter" {% if form.role.value == 'exporter' %}checked{% endif %}>
+                        🚢 Exporter
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="id_first_name">First Name</label>
+                    {{ form.first_name }}
+                    {% if form.first_name.errors %}<ul class="error-list">{% for e in form.first_name.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="id_last_name">Last Name</label>
+                    {{ form.last_name }}
+                    {% if form.last_name.errors %}<ul class="error-list">{% for e in form.last_name.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="id_username">Username</label>
+                {{ form.username }}
+                {% if form.username.errors %}<ul class="error-list">{% for e in form.username.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="id_email">Email</label>
+                {{ form.email }}
+                {% if form.email.errors %}<ul class="error-list">{% for e in form.email.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="id_phone">Phone</label>
+                    {{ form.phone }}
+                </div>
+                <div class="form-group">
+                    <label for="id_district">District</label>
+                    {{ form.district }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="id_password1">Password</label>
+                {{ form.password1 }}
+                {% if form.password1.errors %}<ul class="error-list">{% for e in form.password1.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="id_password2">Confirm Password</label>
+                {{ form.password2 }}
+                {% if form.password2.errors %}<ul class="error-list">{% for e in form.password2.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
+        </form>
+
+        <p style="text-align:center;margin-top:1.25rem;color:var(--clr-text-light);font-size:.9rem;">
+            Already have an account? <a href="{% url 'login' %}">Sign in here</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

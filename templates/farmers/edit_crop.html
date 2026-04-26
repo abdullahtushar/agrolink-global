@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Edit Crop — AgroLink Global{% endblock %}
+
+{% block content %}
+<div class="container" style="padding:2rem 1.5rem;">
+    <div class="form-card" style="max-width:600px;">
+        <h2>Edit Crop Listing</h2>
+        <p class="form-subtitle">Update details for {{ listing.vegetable.name }}</p>
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}<p class="help-text">{{ field.help_text }}</p>{% endif %}
+                {% if field.errors %}<ul class="error-list">{% for e in field.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+            </div>
+            {% endfor %}
+            <div style="display:flex;gap:.75rem;">
+                <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+                <a href="{% url 'farmer_dashboard' %}" class="btn btn-secondary btn-block">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

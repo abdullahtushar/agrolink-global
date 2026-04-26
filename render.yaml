@@ -1,0 +1,23 @@
+databases:
+  - name: agrolink-db
+    databaseName: agrolink
+    user: agrolink_user
+    plan: free
+
+services:
+  - type: web
+    name: agrolink-web
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn agrolink.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: agrolink-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
+      - key: PYTHON_VERSION
+        value: 3.10.0

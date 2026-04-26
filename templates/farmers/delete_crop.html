@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Delete Crop — AgroLink Global{% endblock %}
+
+{% block content %}
+<div class="container" style="padding:3rem 1.5rem;">
+    <div class="form-card" style="max-width:480px;">
+        <h2 style="color:var(--clr-danger);">Delete Listing</h2>
+        <p class="form-subtitle">Are you sure you want to delete this crop listing?</p>
+
+        <div class="card" style="margin-bottom:1.5rem;">
+            <strong>{{ listing.vegetable.name }}</strong><br>
+            <span style="color:var(--clr-text-light);">{{ listing.quantity_kg }} kg — ৳{{ listing.price_per_kg }}/kg — {{ listing.district }}</span>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            <div style="display:flex;gap:.75rem;">
+                <button type="submit" class="btn btn-danger btn-block">Yes, Delete</button>
+                <a href="{% url 'farmer_dashboard' %}" class="btn btn-secondary btn-block">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Login — AgroLink Global{% endblock %}
+
+{% block content %}
+<div class="container" style="padding:3rem 1.5rem;">
+    <div class="form-card">
+        <h2>Welcome Back</h2>
+        <p class="form-subtitle">Sign in to your AgroLink Global account</p>
+
+        {% if form.non_field_errors %}
+        <div class="alert alert-error">
+            {% for error in form.non_field_errors %}{{ error }}{% endfor %}
+        </div>
+        {% endif %}
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_username">Username</label>
+                {{ form.username }}
+                {% if form.username.errors %}<ul class="error-list">{% for e in form.username.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+            </div>
+            <div class="form-group">
+                <label for="id_password">Password</label>
+                {{ form.password }}
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
+        </form>
+
+        <p style="text-align:center;margin-top:1.25rem;color:var(--clr-text-light);font-size:.9rem;">
+            Don't have an account? <a href="{% url 'register' %}">Register here</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}My Inquiries — AgroLink Global{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>💬 My Inquiries</h1>
+        <a href="{% url 'exporter_dashboard' %}" class="btn btn-secondary">← Search Crops</a>
+    </div>
+
+    {% if inquiries %}
+    {% for inquiry in inquiries %}
+    <div class="card inquiry-card status-{{ inquiry.status }}" style="margin-bottom:.75rem;">
+        <div class="inquiry-header">
+            <span class="inquiry-subject">{{ inquiry.subject }}</span>
+            <span class="badge {% if inquiry.status == 'pending' %}badge-warning{% elif inquiry.status == 'responded' %}badge-info{% elif inquiry.status == 'accepted' %}badge-success{% elif inquiry.status == 'rejected' %}badge-danger{% else %}badge-neutral{% endif %}">
+                {{ inquiry.get_status_display }}
+            </span>
+        </div>
+        <div class="inquiry-meta">
+            <span>To: {{ inquiry.farmer.get_full_name }}</span>
+            <span>Crop: {{ inquiry.crop_listing.vegetable.name }}</span>
+            <span>{{ inquiry.created_at|date:"M d, Y" }}</span>
+        </div>
+        <p style="color:var(--clr-text-light);font-size:.88rem;margin-bottom:.75rem;">{{ inquiry.message|truncatewords:30 }}</p>
+        <a href="{% url 'inquiry_detail' inquiry.pk %}" class="btn btn-secondary btn-sm">View Thread</a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="empty-state">
+        <div class="empty-icon">💬</div>
+        <h3>No inquiries yet</h3>
+        <p>Search for crops and send your first inquiry to a farmer.</p>
+        <a href="{% url 'exporter_dashboard' %}" class="btn btn-primary">Search Crops</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

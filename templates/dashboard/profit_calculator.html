@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block title %}Profit Calculator — AgroLink Global{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>💰 Profit Estimation Tool</h1>
+        <p>Calculate your estimated profit for crop export</p>
+    </div>
+
+    <div class="calc-grid">
+        <!-- Input Form -->
+        <div class="card">
+            <h3 class="section-title">📝 Enter Costs & Revenue</h3>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="production_cost">Production Cost per KG (৳)</label>
+                    <input type="number" id="production_cost" name="production_cost" class="form-input" step="0.01" min="0" placeholder="e.g. 15.00" value="{% if result.production_cost %}{{ result.production_cost }}{% endif %}" required>
+                </div>
+                <div class="form-group">
+                    <label for="transport_cost">Transport Cost per KG (৳)</label>
+                    <input type="number" id="transport_cost" name="transport_cost" class="form-input" step="0.01" min="0" placeholder="e.g. 5.00" value="{% if result.transport_cost %}{{ result.transport_cost }}{% endif %}" required>
+                </div>
+                <div class="form-group">
+                    <label for="selling_price">Selling Price per KG (৳)</label>
+                    <input type="number" id="selling_price" name="selling_price" class="form-input" step="0.01" min="0" placeholder="e.g. 35.00" value="{% if result.selling_price %}{{ result.selling_price }}{% endif %}" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity (KG)</label>
+                    <input type="number" id="quantity" name="quantity" class="form-input" step="0.01" min="0" placeholder="e.g. 1000" value="{% if result.quantity %}{{ result.quantity }}{% endif %}" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Calculate Profit</button>
+            </form>
+        </div>
+
+        <!-- Results -->
+        <div>
+            {% if result and not result.error %}
+            <div class="calc-result">
+                <h3>📊 Estimation Results</h3>
+                <div class="result-item">
+                    <span>Production Cost / kg</span>
+                    <span class="value">৳{{ result.production_cost }}</span>
+                </div>
+                <div class="result-item">
+                    <span>Transport Cost / kg</span>
+                    <span class="value">৳{{ result.transport_cost }}</span>
+                </div>
+                <div class="result-item">
+                    <span>Total Cost / kg</span>
+                    <span class="value">৳{{ result.production_cost|add:result.transport_cost }}</span>
+                </div>
+                <div class="result-item">
+                    <span>Selling Price / kg</span>
+                    <span class="value">৳{{ result.selling_price }}</span>
+                </div>
+                <div class="result-item">
+                    <span>Quantity</span>
+                    <span class="value">{{ result.quantity }} kg</span>
+                </div>
+                <div class="result-item">
+                    <span>Total Cost</span>
+                    <span class="value">৳{{ result.total_cost }}</span>
+                </div>
+                <div class="result-item">
+                    <span>Total Revenue</span>
+                    <span class="value">৳{{ result.total_revenue }}</span>
+                </div>
+                <div class="profit-total">
+                    <span>Estimated Profit</span>
+                    <span class="amount {% if not result.is_profitable %}negative{% endif %}">
+                        ৳{{ result.profit }}
+                    </span>
+                    <div style="margin-top:.5rem;font-size:.9rem;opacity:.85;">
+                        Margin: {{ result.profit_margin }}%
+                        {% if result.is_profitable %}
+                        <span style="margin-left:.5rem;">✅ Profitable</span>
+                        {% else %}
+                        <span style="margin-left:.5rem;">⚠️ Loss</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% elif result.error %}
+            <div class="alert alert-error">{{ result.error }}</div>
+            {% else %}
+            <div class="card" style="text-align:center;padding:3rem;">
+                <div style="font-size:3rem;margin-bottom:1rem;">🧮</div>
+                <h3 style="margin-bottom:.5rem;">Enter Your Values</h3>
+                <p style="color:var(--clr-text-light);">Fill in the form and click "Calculate Profit" to see your estimated earnings from crop export.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

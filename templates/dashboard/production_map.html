@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}Production Data — AgroLink Global{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>🗺️ Production Mapping</h1>
+        <p>District-based agricultural production data across Bangladesh</p>
+    </div>
+
+    <!-- By District -->
+    <div class="section">
+        <h2 class="section-title">📍 Production by District</h2>
+        {% if district_data %}
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th><th>District</th><th>Total Quantity (kg)</th><th>Listings</th><th>Crop Types</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in district_data %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><strong>{{ row.district }}</strong></td>
+                        <td>{{ row.total_quantity|floatformat:0 }} kg</td>
+                        <td>{{ row.total_listings }}</td>
+                        <td>{{ row.crop_types }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <div class="empty-icon">📍</div>
+            <h3>No production data available</h3>
+            <p>Production data will appear here as farmers add their crop listings.</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- By Crop -->
+    <div class="section">
+        <h2 class="section-title">🥬 Production by Crop Type</h2>
+        {% if crop_data %}
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th><th>Vegetable</th><th>Total Quantity (kg)</th><th>Listings</th><th>Districts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in crop_data %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><strong>{{ row.vegetable__name }}</strong></td>
+                        <td>{{ row.total_quantity|floatformat:0 }} kg</td>
+                        <td>{{ row.total_listings }}</td>
+                        <td>{{ row.district_count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <div class="empty-icon">🥬</div>
+            <h3>No crop data available</h3>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

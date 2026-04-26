@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block title %}{{ inquiry.subject }} — AgroLink Global{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>{{ inquiry.subject }}</h1>
+        <span class="badge {% if inquiry.status == 'pending' %}badge-warning{% elif inquiry.status == 'responded' %}badge-info{% elif inquiry.status == 'accepted' %}badge-success{% elif inquiry.status == 'rejected' %}badge-danger{% else %}badge-neutral{% endif %}" style="font-size:.9rem;padding:.4rem 1rem;">
+            {{ inquiry.get_status_display }}
+        </span>
+    </div>
+
+    <div class="grid grid-2">
+        <!-- Left: Thread -->
+        <div>
+            <!-- Original Inquiry -->
+            <div class="card" style="margin-bottom:1rem;border-left:4px solid var(--clr-accent);">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;">
+                    <strong>{{ inquiry.exporter.get_full_name }} (Exporter)</strong>
+                    <span style="font-size:.82rem;color:var(--clr-text-light);">{{ inquiry.created_at|date:"M d, Y H:i" }}</span>
+                </div>
+                <p style="font-size:.92rem;">{{ inquiry.message }}</p>
+                {% if inquiry.quantity_needed %}
+                <p style="margin-top:.5rem;font-size:.88rem;color:var(--clr-text-light);">Quantity needed: <strong>{{ inquiry.quantity_needed }} kg</strong></p>
+                {% endif %}
+            </div>
+
+            <!-- Replies -->
+            {% for reply in replies %}
+            <div class="card" style="margin-bottom:.75rem;border-left:4px solid {% if reply.sender == inquiry.farmer %}var(--clr-primary){% else %}var(--clr-info){% endif %};">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;">
+                    <strong>{{ reply.sender.get_full_name }} ({{ reply.sender.get_role_display }})</strong>
+                    <span style="font-size:.82rem;color:var(--clr-text-light);">{{ reply.created_at|date:"M d, Y H:i" }}</span>
+                </div>
+                <p style="font-size:.92rem;">{{ reply.message }}</p>
+            </div>
+            {% endfor %}
+
+            <!-- Reply Form -->
+            <div class="card" style="margin-top:1rem;">
+                <h3 class="section-title">✏️ Send Reply</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ reply_form.message }}
+                    </div>
+                    <button type="submit" name="reply" class="btn btn-primary">Send Reply</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right: Info Panel -->
+        <div>
+            <div class="card" style="margin-bottom:1rem;">
+                <h3 class="section-title">📋 Listing Info</h3>
+                <div class="table-wrapper" style="border:none;">
+                    <table class="table">
+                        <tr><td style="font-weight:600;">Crop</td><td>{{ inquiry.crop_listing.vegetable.name }}</td></tr>
+                        <tr><td style="font-weight:600;">Quantity</td><td>{{ inquiry.crop_listing.quantity_kg }} kg</td></tr>
+                        <tr><td style="font-weight:600;">Price</td><td>৳{{ inquiry.crop_listing.price_per_kg }}/kg</td></tr>
+                        <tr><td style="font-weight:600;">District</td><td>{{ inquiry.crop_listing.district }}</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom:1rem;">
+                <h3 class="section-title">👥 Parties</h3>
+                <p style="font-size:.9rem;margin-bottom:.5rem;"><strong>Farmer:</strong> {{ inquiry.farmer.get_full_name }}<br><span style="color:var(--clr-text-light);">{{ inquiry.farmer.district }} · {{ inquiry.farmer.phone|default:"" }}</span></p>
+                <p style="font-size:.9rem;"><strong>Exporter:</strong> {{ inquiry.exporter.get_full_name }}<br><span style="color:var(--clr-text-light);">{{ inquiry.exporter.district }} · {{ inquiry.exporter.phone|default:"" }}</span></p>
+            </div>
+
+            {% if status_form %}
+            <div class="card">
+                <h3 class="section-title">🔄 Update Status</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ status_form.status }}
+                    </div>
+                    <button type="submit" name="update_status" class="btn btn-accent btn-block">Update Status</button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div style="margin-top:1.5rem;">
+        <a href="{% url 'inquiry_list' %}" class="btn btn-secondary">← Back to Inquiries</a>
+    </div>
+</div>
+{% endblock %}

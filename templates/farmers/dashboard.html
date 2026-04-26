@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %}Farmer Dashboard — AgroLink Global{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>👨‍🌾 Farmer Dashboard</h1>
+        <a href="{% url 'add_crop' %}" class="btn btn-primary">+ Add New Crop</a>
+    </div>
+
+    <div class="stat-cards">
+        <div class="stat-card">
+            <div class="stat-icon">📦</div>
+            <div class="stat-value">{{ total_listings }}</div>
+            <div class="stat-label">Total Listings</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">✅</div>
+            <div class="stat-value">{{ available }}</div>
+            <div class="stat-label">Available Now</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">💬</div>
+            <div class="stat-value">{{ total_inquiries }}</div>
+            <div class="stat-label">Inquiries Received</div>
+        </div>
+    </div>
+
+    <!-- Recent Listings -->
+    <div class="section">
+        <h2 class="section-title">🥬 Your Recent Listings</h2>
+        {% if listings %}
+        <div class="grid grid-3">
+            {% for listing in listings %}
+            <div class="card crop-card">
+                <div class="crop-header">
+                    <span class="crop-name">{{ listing.vegetable.name }}</span>
+                    <span class="badge {% if listing.status == 'available' %}badge-success{% elif listing.status == 'sold' %}badge-danger{% else %}badge-warning{% endif %}">
+                        {{ listing.get_status_display }}
+                    </span>
+                </div>
+                <div class="crop-meta">
+                    <span>📍 {{ listing.district }}</span>
+                    <span>🌱 {{ listing.get_season_display }}</span>
+                    <span>⚖️ {{ listing.quantity_kg }} kg</span>
+                </div>
+                <div class="crop-price">৳{{ listing.price_per_kg }}/kg</div>
+                <div class="crop-actions">
+                    <a href="{% url 'edit_crop' listing.pk %}" class="btn btn-secondary btn-sm">Edit</a>
+                    <a href="{% url 'delete_crop' listing.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div style="text-align:center;margin-top:1.5rem;">
+            <a href="{% url 'my_crops' %}" class="btn btn-secondary">View All Crops →</a>
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <div class="empty-icon">🌱</div>
+            <h3>No crops listed yet</h3>
+            <p>Start by adding your first crop listing to connect with exporters.</p>
+            <a href="{% url 'add_crop' %}" class="btn btn-primary">Add Your First Crop</a>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Recent Inquiries -->
+    {% if inquiries %}
+    <div class="section">
+        <h2 class="section-title">💬 Recent Inquiries</h2>
+        {% for inquiry in inquiries %}
+        <div class="card inquiry-card status-{{ inquiry.status }}" style="margin-bottom:.75rem;">
+            <div class="inquiry-header">
+                <span class="inquiry-subject">{{ inquiry.subject }}</span>
+                <span class="badge {% if inquiry.status == 'pending' %}badge-warning{% elif inquiry.status == 'responded' %}badge-info{% elif inquiry.status == 'accepted' %}badge-success{% else %}badge-neutral{% endif %}">
+                    {{ inquiry.get_status_display }}
+                </span>
+            </div>
+            <div class="inquiry-meta">
+                <span>From: {{ inquiry.exporter.get_full_name }}</span>
+                <span>{{ inquiry.created_at|date:"M d, Y" }}</span>
+            </div>
+            <a href="{% url 'inquiry_detail' inquiry.pk %}" class="btn btn-secondary btn-sm">View & Reply</a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

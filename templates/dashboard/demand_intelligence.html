@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block title %}Market Intelligence — AgroLink Global{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>📊 Demand Intelligence Dashboard</h1>
+        <p>Market trends and price indicators for EU and US markets</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('eu')">🇪🇺 European Union</button>
+        <button class="tab-btn" onclick="switchTab('us')">🇺🇸 United States</button>
+        <button class="tab-btn" onclick="switchTab('me')">🌍 Middle East</button>
+    </div>
+
+    <!-- EU Table -->
+    <div class="tab-content active" id="tab-eu">
+        <div class="section">
+            <h2 class="section-title">🇪🇺 EU Market Demand Trends</h2>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Vegetable</th><th>Demand</th><th>Avg Price (USD/kg)</th><th>Trend</th><th>Change</th><th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in eu_trends %}
+                        <tr>
+                            <td><strong>{{ item.vegetable }}</strong></td>
+                            <td>
+                                <span class="badge {% if item.demand_level == 'High' %}badge-success{% elif item.demand_level == 'Medium' %}badge-warning{% else %}badge-neutral{% endif %}">
+                                    {{ item.demand_level }}
+                                </span>
+                            </td>
+                            <td>${{ item.avg_price_usd }}</td>
+                            <td>
+                                {% if item.trend == 'up' %}<span class="trend-up">📈 Up</span>
+                                {% elif item.trend == 'down' %}<span class="trend-down">📉 Down</span>
+                                {% else %}<span class="trend-stable">➡️ Stable</span>{% endif %}
+                            </td>
+                            <td>
+                                <span class="{% if '-' in item.change %}trend-down{% else %}trend-up{% endif %}">{{ item.change }}</span>
+                            </td>
+                            <td style="color:var(--clr-text-light);font-size:.85rem;">{{ item.notes }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- US Table -->
+    <div class="tab-content" id="tab-us">
+        <div class="section">
+            <h2 class="section-title">🇺🇸 US Market Demand Trends</h2>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Vegetable</th><th>Demand</th><th>Avg Price (USD/kg)</th><th>Trend</th><th>Change</th><th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in us_trends %}
+                        <tr>
+                            <td><strong>{{ item.vegetable }}</strong></td>
+                            <td>
+                                <span class="badge {% if item.demand_level == 'High' %}badge-success{% elif item.demand_level == 'Medium' %}badge-warning{% else %}badge-neutral{% endif %}">
+                                    {{ item.demand_level }}
+                                </span>
+                            </td>
+                            <td>${{ item.avg_price_usd }}</td>
+                            <td>
+                                {% if item.trend == 'up' %}<span class="trend-up">📈 Up</span>
+                                {% elif item.trend == 'down' %}<span class="trend-down">📉 Down</span>
+                                {% else %}<span class="trend-stable">➡️ Stable</span>{% endif %}
+                            </td>
+                            <td>
+                                <span class="{% if '-' in item.change %}trend-down{% else %}trend-up{% endif %}">{{ item.change }}</span>
+                            </td>
+                            <td style="color:var(--clr-text-light);font-size:.85rem;">{{ item.notes }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- ME Table -->
+    <div class="tab-content" id="tab-me">
+        <div class="section">
+            <h2 class="section-title">🌍 Middle East Market Demand Trends</h2>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Vegetable</th><th>Demand</th><th>Avg Price (USD/kg)</th><th>Trend</th><th>Change</th><th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in me_trends %}
+                        <tr>
+                            <td><strong>{{ item.vegetable }}</strong></td>
+                            <td>
+                                <span class="badge {% if item.demand_level == 'High' %}badge-success{% elif item.demand_level == 'Medium' %}badge-warning{% else %}badge-neutral{% endif %}">
+                                    {{ item.demand_level }}
+                                </span>
+                            </td>
+                            <td>${{ item.avg_price_usd }}</td>
+                            <td>
+                                {% if item.trend == 'up' %}<span class="trend-up">📈 Up</span>
+                                {% elif item.trend == 'down' %}<span class="trend-down">📉 Down</span>
+                                {% else %}<span class="trend-stable">➡️ Stable</span>{% endif %}
+                            </td>
+                            <td>
+                                <span class="{% if '-' in item.change %}trend-down{% else %}trend-up{% endif %}">{{ item.change }}</span>
+                            </td>
+                            <td style="color:var(--clr-text-light);font-size:.85rem;">{{ item.notes }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top:1rem;background:var(--clr-surface-alt);">
+        <p style="font-size:.85rem;color:var(--clr-text-light);">
+            ⚠️ <strong>Disclaimer:</strong> This data is for informational purposes only. Prices and demand indicators are based on aggregated market research and may not reflect real-time conditions. Always verify with current market sources before making trade decisions.
+        </p>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+function switchTab(tab) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
+{% endblock %}
+{% endblock %}

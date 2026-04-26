@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Send Inquiry — AgroLink Global{% endblock %}
+
+{% block content %}
+<div class="container" style="padding:2rem 1.5rem;">
+    <div class="form-card" style="max-width:600px;">
+        <h2>Send Inquiry</h2>
+        <p class="form-subtitle">Regarding: {{ listing.vegetable.name }} — {{ listing.quantity_kg }}kg from {{ listing.farmer.get_full_name }}</p>
+
+        <div class="card" style="margin-bottom:1.5rem;background:var(--clr-surface-alt);">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                    <strong>{{ listing.vegetable.name }}</strong><br>
+                    <span style="color:var(--clr-text-light);font-size:.88rem;">{{ listing.district }} · {{ listing.get_season_display }}</span>
+                </div>
+                <div style="text-align:right;">
+                    <strong style="color:var(--clr-primary);font-size:1.1rem;">৳{{ listing.price_per_kg }}/kg</strong><br>
+                    <span style="color:var(--clr-text-light);font-size:.88rem;">{{ listing.quantity_kg }} kg available</span>
+                </div>
+            </div>
+        </div>
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}<p class="help-text">{{ field.help_text }}</p>{% endif %}
+                {% if field.errors %}<ul class="error-list">{% for e in field.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+            </div>
+            {% endfor %}
+            <div style="display:flex;gap:.75rem;">
+                <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
+                <a href="{% url 'exporter_dashboard' %}" class="btn btn-secondary btn-block">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

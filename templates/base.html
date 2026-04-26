@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AgroLink Global — Connecting Bangladeshi Farmers with International Exporters. EU & US market access for agricultural products.">
+    <title>{% block title %}AgroLink Global{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{% url 'home' %}" class="nav-brand">
+                <div class="brand-icon">🌿</div>
+                Agro<span>Link</span>
+            </a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="{% url 'home' %}">Home</a>
+                {% if user.is_authenticated %}
+                    {% if user.is_farmer %}
+                        <a href="{% url 'farmer_dashboard' %}">Dashboard</a>
+                        <a href="{% url 'my_crops' %}">My Crops</a>
+                    {% elif user.is_exporter %}
+                        <a href="{% url 'exporter_dashboard' %}">Dashboard</a>
+                        <a href="{% url 'my_inquiries' %}">My Inquiries</a>
+                    {% endif %}
+                    <a href="{% url 'production_map' %}">Production Data</a>
+                    <a href="{% url 'demand_intelligence' %}">Crop Insights & Trends</a>
+                    <a href="{% url 'profit_calculator' %}">Profit Calculator</a>
+                    <a href="{% url 'inquiry_list' %}">Inquiries</a>
+                    <a href="{% url 'profile' %}">Profile</a>
+                    <form method="post" action="{% url 'logout' %}" style="display:inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-nav">Logout</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'profit_calculator' %}">Profit Calculator</a>
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'register' %}" class="btn-nav">Register</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <!-- Messages -->
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Content -->
+    <main class="page-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Agro<span>Link</span> Global</div>
+                    <p>Connecting Bangladeshi farmers with global exporters. Bridging the gap between local production and international markets across EU and US destinations.</p>
+                </div>
+                <div>
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'profit_calculator' %}">Profit Calculator</a></li>
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>For Farmers</h4>
+                    <ul>
+                        <li><a href="{% url 'register' %}">Create Account</a></li>
+                        <li><a href="#">List Your Crops</a></li>
+                        <li><a href="#">Manage Inquiries</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>For Exporters</h4>
+                    <ul>
+                        <li><a href="{% url 'register' %}">Create Account</a></li>
+                        <li><a href="#">Search Crops</a></li>
+                        <li><a href="#">Market Intelligence</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AgroLink Global. All rights reserved. Built for Bangladesh 🇧🇩</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--clr-text-light);">
+                    Powered by <strong>Dhaka Logic</strong><br>
+                    <span style="font-size: 0.8rem;">A Web and App Development Company</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

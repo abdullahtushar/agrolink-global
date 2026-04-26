@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}My Crops — AgroLink Global{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>🌾 My Crop Listings</h1>
+        <a href="{% url 'add_crop' %}" class="btn btn-primary">+ Add New Crop</a>
+    </div>
+
+    {% if listings %}
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Crop</th><th>District</th><th>Season</th><th>Quantity</th><th>Price/kg</th><th>Status</th><th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for listing in listings %}
+                <tr>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            {% if listing.vegetable.image %}
+                                <img src="{{ listing.vegetable.image.url }}" alt="{{ listing.vegetable.name }}" style="width: 32px; height: 32px; border-radius: 4px; object-fit: cover;">
+                            {% else %}
+                                <div style="width: 32px; height: 32px; border-radius: 4px; background: var(--clr-surface-alt); display: flex; align-items: center; justify-content: center; font-size: 1rem;">🥬</div>
+                            {% endif %}
+                            <strong>{{ listing.vegetable.name }}</strong>
+                        </div>
+                    </td>
+                    <td>{{ listing.district }}</td>
+                    <td>{{ listing.get_season_display }}</td>
+                    <td>{{ listing.quantity_kg }} kg</td>
+                    <td>৳{{ listing.price_per_kg }}</td>
+                    <td>
+                        <span class="badge {% if listing.status == 'available' %}badge-success{% elif listing.status == 'sold' %}badge-danger{% else %}badge-warning{% endif %}">
+                            {{ listing.get_status_display }}
+                        </span>
+                    </td>
+                    <td>
+                        <a href="{% url 'edit_crop' listing.pk %}" class="btn btn-secondary btn-sm">Edit</a>
+                        <a href="{% url 'delete_crop' listing.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="empty-state">
+        <div class="empty-icon">🌱</div>
+        <h3>No crops yet</h3>
+        <p>Add your first crop listing to start connecting with exporters.</p>
+        <a href="{% url 'add_crop' %}" class="btn btn-primary">Add Crop</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
