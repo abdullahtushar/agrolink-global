@@ -7,8 +7,8 @@
     <div class="grid grid-3">
         {% for vegetable in vegetables %}
         <div class="card crop-card" style="padding: 0; overflow: hidden; border-radius: var(--radius-md);">
-            {% if vegetable.image %}
-                <img src="{{ vegetable.image.url }}" alt="{{ vegetable.name }}" style="width: 100%; height: 200px; object-fit: cover;">
+            {% if vegetable.static_image_url %}
+                <img src="{{ vegetable.static_image_url }}" alt="{{ vegetable.name }}" style="width: 100%; height: 200px; object-fit: cover;">
             {% else %}
                 <div style="height: 200px; background: var(--clr-surface-alt); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🥬</div>
             {% endif %}

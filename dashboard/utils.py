@@ -27,7 +27,7 @@ def get_profitable_predictions():
     for crop in crops_data:
         try:
             veg = Vegetable.objects.get(name=crop['name'])
-            image_url = veg.image.url if veg.image else None
+            image_url = veg.static_image_url
         except Vegetable.DoesNotExist:
             image_url = None
             
@@ -42,7 +42,7 @@ def get_profitable_predictions():
                 'name': crop['name'],
                 'region': region['name'],
                 'profit': round(profit, 2),
-                'image_url': image_url
+                'static_image_url': image_url
             })
 
     # Sort by profit descending and get top 3

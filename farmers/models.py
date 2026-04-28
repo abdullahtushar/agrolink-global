@@ -2,8 +2,10 @@
 Farmers Models — Crop & Production Data
 """
 
+import os
 from django.db import models
 from django.conf import settings
+from django.templatetags.static import static
 
 
 class Vegetable(models.Model):
@@ -29,6 +31,15 @@ class Vegetable(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def static_image_url(self):
+        """Return static URL for the vegetable image (works on Render)."""
+        if self.image:
+            # Map media filename to static path
+            filename = os.path.basename(self.image.name)
+            return static(f'images/vegetables/{filename}')
+        return None
 
 
 class CropListing(models.Model):
