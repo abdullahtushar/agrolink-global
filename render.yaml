@@ -9,7 +9,7 @@ services:
     name: agrolink-web
     env: python
     plan: free
-    buildCommand: "./build.sh"
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --no-input && python manage.py migrate && python manage.py loaddata db_backup.json || true"
     startCommand: "gunicorn agrolink.wsgi:application"
     envVars:
       - key: DATABASE_URL
@@ -22,3 +22,5 @@ services:
         value: 4
       - key: PYTHON_VERSION
         value: 3.10.0
+      - key: RENDER
+        value: true
