@@ -161,3 +161,9 @@ def predictions_list(request):
     from .utils import get_profitable_predictions
     predictions = get_profitable_predictions()
     return render(request, 'dashboard/predictions_list.html', {'predictions': predictions})
+
+def prediction_view(request):
+    """AI-Based Crop Profit Prediction."""
+    from .utils import get_top_profitable_crops
+    predictions = get_top_profitable_crops()
+    return render(request, 'dashboard/prediction.html', {'predictions': predictions})

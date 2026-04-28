@@ -1,1 +1,965 @@
-[{"model": "accounts.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$1200000$y7tnyixpx7ENSNotDwOxu9$HYMWfwwQ2gcozV6L9PDih1PYBIPLBwsgEnx/HL+SIVA=", "last_login": "2026-04-25T09:50:48.099Z", "is_superuser": false, "username": "farmer1", "first_name": "Rahim", "last_name": "Uddin", "email": "farmer1@agrolink.test", "is_staff": false, "is_active": true, "date_joined": "2026-04-25T09:45:35.509Z", "role": "farmer", "phone": "01711111111", "district": "Rajshahi", "address": "", "profile_picture": "", "created_at": "2026-04-25T09:45:35.510Z", "updated_at": "2026-04-25T09:45:36.247Z", "groups": [], "user_permissions": []}}, {"model": "accounts.user", "pk": 2, "fields": {"password": "pbkdf2_sha256$1200000$eViNaEvqgzFsCe81QS1kGa$FQu4XbqeSM7wKlTSOCvnWL+kIom6X7lG6LRapKJJVPQ=", "last_login": null, "is_superuser": false, "username": "farmer2", "first_name": "Karim", "last_name": "Hossain", "email": "farmer2@agrolink.test", "is_staff": false, "is_active": true, "date_joined": "2026-04-25T09:45:36.268Z", "role": "farmer", "phone": "01722222222", "district": "Bogra", "address": "", "profile_picture": "", "created_at": "2026-04-25T09:45:36.268Z", "updated_at": "2026-04-25T09:45:37.019Z", "groups": [], "user_permissions": []}}, {"model": "accounts.user", "pk": 3, "fields": {"password": "pbkdf2_sha256$1200000$lJnKR8DmS80yDbdw0MfoQo$uWXsatQz3WQ8hSoTqgxhYRkmsy5xAPiZftgRLO5Nzr4=", "last_login": null, "is_superuser": false, "username": "farmer3", "first_name": "Jamal", "last_name": "Ahmed", "email": "farmer3@agrolink.test", "is_staff": false, "is_active": true, "date_joined": "2026-04-25T09:45:37.028Z", "role": "farmer", "phone": "01733333333", "district": "Dinajpur", "address": "", "profile_picture": "", "created_at": "2026-04-25T09:45:37.028Z", "updated_at": "2026-04-25T09:45:37.778Z", "groups": [], "user_permissions": []}}, {"model": "accounts.user", "pk": 4, "fields": {"password": "pbkdf2_sha256$1200000$B9I335RdwkN1OUlE3o9WfA$RWSdgzT0mYsSuR2VqkImsNOdcEzzDC6mWO6LxAQZ2qE=", "last_login": null, "is_superuser": false, "username": "farmer4", "first_name": "Fatema", "last_name": "Begum", "email": "farmer4@agrolink.test", "is_staff": false, "is_active": true, "date_joined": "2026-04-25T09:45:37.784Z", "role": "farmer", "phone": "01744444444", "district": "Rangpur", "address": "", "profile_picture": "", "created_at": "2026-04-25T09:45:37.784Z", "updated_at": "2026-04-25T09:45:38.505Z", "groups": [], "user_permissions": []}}, {"model": "accounts.user", "pk": 5, "fields": {"password": "pbkdf2_sha256$1200000$msVg1gCoIv5Sl03rFMNIqR$Psvn9ZRRfsRzWig66ZMBH+f6hsfosvpckYWsGJCZ41g=", "last_login": null, "is_superuser": false, "username": "farmer5", "first_name": "Sumon", "last_name": "Mia", "email": "farmer5@agrolink.test", "is_staff": false, "is_active": true, "date_joined": "2026-04-25T09:45:38.512Z", "role": "farmer", "phone": "01755555555", "district": "Comilla", "address": "", "profile_picture": "", "created_at": "2026-04-25T09:45:38.512Z", "updated_at": "2026-04-25T09:45:39.236Z", "groups": [], "user_permissions": []}}, {"model": "accounts.user", "pk": 6, "fields": {"password": "pbkdf2_sha256$1200000$mpK4kZ07c1EQJDY9VF9RDi$ryvIRiaFPBgNRZQBJHshnzALSAkvMvd4syXuq6HDgq0=", "last_login": "2026-04-25T09:53:13.039Z", "is_superuser": false, "username": "exporter1", "first_name": "David", "last_name": "Smith", "email": "exporter1@agrolink.test", "is_staff": false, "is_active": true, "date_joined": "2026-04-25T09:45:39.243Z", "role": "exporter", "phone": "01811111111", "district": "Dhaka", "address": "", "profile_picture": "", "created_at": "2026-04-25T09:45:39.243Z", "updated_at": "2026-04-25T09:45:39.994Z", "groups": [], "user_permissions": []}}, {"model": "accounts.user", "pk": 7, "fields": {"password": "pbkdf2_sha256$1200000$dm6pL7t42jKw2ijx4x1Dv7$j2E3r6bJ7XHVu9vunGI1DrCUrLknDMMg0Kp1MV6QU9Y=", "last_login": null, "is_superuser": false, "username": "exporter2", "first_name": "Sarah", "last_name": "Johnson", "email": "exporter2@agrolink.test", "is_staff": false, "is_active": true, "date_joined": "2026-04-25T09:45:40.002Z", "role": "exporter", "phone": "01822222222", "district": "Chittagong", "address": "", "profile_picture": "", "created_at": "2026-04-25T09:45:40.002Z", "updated_at": "2026-04-25T09:45:40.807Z", "groups": [], "user_permissions": []}}, {"model": "accounts.user", "pk": 8, "fields": {"password": "pbkdf2_sha256$1200000$1GOBbX2vkLIGwyjx6CLWyV$FLI6tWteeu1INMtgp049mNm0rfRO7qMQfrH2aOM8dPY=", "last_login": null, "is_superuser": false, "username": "exporter3", "first_name": "Tanvir", "last_name": "Rahman", "email": "exporter3@agrolink.test", "is_staff": false, "is_active": true, "date_joined": "2026-04-25T09:45:40.816Z", "role": "exporter", "phone": "01833333333", "district": "Dhaka", "address": "", "profile_picture": "", "created_at": "2026-04-25T09:45:40.816Z", "updated_at": "2026-04-25T09:45:41.542Z", "groups": [], "user_permissions": []}}, {"model": "accounts.user", "pk": 9, "fields": {"password": "pbkdf2_sha256$1200000$hQanbpaJMTTFmhRUYcYASC$ZF31RGQx2Z2NzVGqocviD43AhTrTcXxCG7hmKSVYuXA=", "last_login": "2026-04-26T13:02:39.167Z", "is_superuser": true, "username": "admin", "first_name": "Admin", "last_name": "User", "email": "admin@agrolink.test", "is_staff": true, "is_active": true, "date_joined": "2026-04-25T09:45:41.697Z", "role": "admin", "phone": "", "district": "", "address": "", "profile_picture": "", "created_at": "2026-04-25T09:45:41.697Z", "updated_at": "2026-04-25T09:45:42.439Z", "groups": [], "user_permissions": []}}, {"model": "accounts.user", "pk": 10, "fields": {"password": "pbkdf2_sha256$1200000$qjqTjynbOjtvwfl1iGRxPG$VXYyaYzn/UHVQhUuxF7Y3P7DSWadUdOzaJWPVJXSv6U=", "last_login": "2026-04-26T13:03:43.932Z", "is_superuser": false, "username": "anan1", "first_name": "Abir", "last_name": "Al Anan", "email": "anan1@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2026-04-25T10:47:54.218Z", "role": "farmer", "phone": "0168516980", "district": "Rangpur", "address": "", "profile_picture": "", "created_at": "2026-04-25T10:47:55.278Z", "updated_at": "2026-04-25T10:47:55.278Z", "groups": [], "user_permissions": []}}, {"model": "accounts.user", "pk": 11, "fields": {"password": "pbkdf2_sha256$1200000$cCNPyXFSmaCW1gKZ1mBJKw$K3Q+yCRmgLkoN4ZkCpwrGEk6X/8Bx1+iObfJOGu8ukI=", "last_login": "2026-04-26T13:05:08.199Z", "is_superuser": false, "username": "tushar1", "first_name": "Tushar", "last_name": "bhai", "email": "tushar1@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2026-04-25T11:00:51.892Z", "role": "exporter", "phone": "0168516981", "district": "Bogra", "address": "", "profile_picture": "profiles/images_1.jpeg", "created_at": "2026-04-25T11:00:52.851Z", "updated_at": "2026-04-25T11:01:33.269Z", "groups": [], "user_permissions": []}}, {"model": "farmers.vegetable", "pk": 1, "fields": {"name": "Potato", "local_name": "আলু", "description": "Staple crop grown widely in northern Bangladesh", "season": "rabi", "image": "vegetables/potato.jpg", "demand_score": 0.5, "created_at": "2026-04-25T09:45:35.423Z"}}, {"model": "farmers.vegetable", "pk": 2, "fields": {"name": "Onion", "local_name": "পেঁয়াজ", "description": "High-demand crop with export potential", "season": "rabi", "image": "vegetables/onion.jpg", "demand_score": 0.5, "created_at": "2026-04-25T09:45:35.432Z"}}, {"model": "farmers.vegetable", "pk": 3, "fields": {"name": "Tomato", "local_name": "টমেটো", "description": "Versatile vegetable used in many cuisines", "season": "rabi", "image": "vegetables/tomato.jpg", "demand_score": 0.5, "created_at": "2026-04-25T09:45:35.439Z"}}, {"model": "farmers.vegetable", "pk": 4, "fields": {"name": "Green Chili", "local_name": "কাঁচা মরিচ", "description": "Essential spice crop", "season": "year_round", "image": "vegetables/green_chili_custom.png", "demand_score": 0.5, "created_at": "2026-04-25T09:45:35.443Z"}}, {"model": "farmers.vegetable", "pk": 5, "fields": {"name": "Bitter Gourd", "local_name": "করলা", "description": "Popular in Asian cuisine, growing export demand", "season": "kharif1", "image": "vegetables/bitter_gourd.jpg", "demand_score": 0.5, "created_at": "2026-04-25T09:45:35.452Z"}}, {"model": "farmers.vegetable", "pk": 6, "fields": {"name": "Eggplant", "local_name": "বেগুন", "description": "Widely cultivated across Bangladesh", "season": "year_round", "image": "vegetables/eggplant.jpg", "demand_score": 0.5, "created_at": "2026-04-25T09:45:35.459Z"}}, {"model": "farmers.vegetable", "pk": 7, "fields": {"name": "Cauliflower", "local_name": "ফুলকপি", "description": "High-value winter vegetable", "season": "rabi", "image": "vegetables/cauliflower.jpg", "demand_score": 0.5, "created_at": "2026-04-25T09:45:35.469Z"}}, {"model": "farmers.vegetable", "pk": 8, "fields": {"name": "Cabbage", "local_name": "বাঁধাকপি", "description": "Cool season crop with good yield", "season": "rabi", "image": "vegetables/cabbage.jpg", "demand_score": 0.5, "created_at": "2026-04-25T09:45:35.474Z"}}, {"model": "farmers.vegetable", "pk": 9, "fields": {"name": "Cucumber", "local_name": "শসা", "description": "Summer crop with good market demand", "season": "kharif1", "image": "vegetables/cucumber.jpg", "demand_score": 0.5, "created_at": "2026-04-25T09:45:35.483Z"}}, {"model": "farmers.vegetable", "pk": 10, "fields": {"name": "Pumpkin", "local_name": "কুমড়া", "description": "Nutritious and long shelf life", "season": "kharif2", "image": "vegetables/pumpkin_custom.jpg", "demand_score": 0.5, "created_at": "2026-04-25T09:45:35.489Z"}}, {"model": "farmers.vegetable", "pk": 11, "fields": {"name": "Spinach", "local_name": "পালং শাক", "description": "Nutritious leafy green", "season": "rabi", "image": "vegetables/spinach.jpg", "demand_score": 0.5, "created_at": "2026-04-25T09:45:35.497Z"}}, {"model": "farmers.vegetable", "pk": 12, "fields": {"name": "Carrot", "local_name": "গাজর", "description": "Root vegetable popular in winter", "season": "rabi", "image": "vegetables/carrot.jpg", "demand_score": 0.5, "created_at": "2026-04-25T09:45:35.504Z"}}, {"model": "farmers.croplisting", "pk": 1, "fields": {"farmer": 3, "vegetable": 1, "quantity_kg": "3633.00", "price_per_kg": "30.55", "district": "Dinajpur", "season": "year_round", "harvest_date": "2026-06-10", "status": "available", "description": "Fresh Potato from Dinajpur", "created_at": "2026-04-25T09:45:41.551Z", "updated_at": "2026-04-25T09:45:41.551Z"}}, {"model": "farmers.croplisting", "pk": 2, "fields": {"farmer": 5, "vegetable": 3, "quantity_kg": "1591.00", "price_per_kg": "70.42", "district": "Rangpur", "season": "year_round", "harvest_date": "2026-05-21", "status": "available", "description": "Fresh Tomato from Comilla", "created_at": "2026-04-25T09:45:41.556Z", "updated_at": "2026-04-25T09:45:41.556Z"}}, {"model": "farmers.croplisting", "pk": 3, "fields": {"farmer": 5, "vegetable": 10, "quantity_kg": "1127.00", "price_per_kg": "74.39", "district": "Dhaka", "season": "year_round", "harvest_date": "2026-06-05", "status": "upcoming", "description": "Fresh Pumpkin from Comilla", "created_at": "2026-04-25T09:45:41.560Z", "updated_at": "2026-04-25T09:45:41.560Z"}}, {"model": "farmers.croplisting", "pk": 4, "fields": {"farmer": 2, "vegetable": 3, "quantity_kg": "3740.00", "price_per_kg": "48.55", "district": "Khulna", "season": "rabi", "harvest_date": "2026-04-27", "status": "available", "description": "Fresh Tomato from Bogra", "created_at": "2026-04-25T09:45:41.566Z", "updated_at": "2026-04-25T09:45:41.566Z"}}, {"model": "farmers.croplisting", "pk": 5, "fields": {"farmer": 1, "vegetable": 4, "quantity_kg": "1893.00", "price_per_kg": "26.80", "district": "Comilla", "season": "rabi", "harvest_date": "2026-05-29", "status": "available", "description": "Fresh Green Chili from Rajshahi", "created_at": "2026-04-25T09:45:41.570Z", "updated_at": "2026-04-25T09:45:41.570Z"}}, {"model": "farmers.croplisting", "pk": 6, "fields": {"farmer": 1, "vegetable": 12, "quantity_kg": "2246.00", "price_per_kg": "56.17", "district": "Rangpur", "season": "kharif1", "harvest_date": "2026-07-24", "status": "available", "description": "Fresh Carrot from Rajshahi", "created_at": "2026-04-25T09:45:41.575Z", "updated_at": "2026-04-25T09:45:41.575Z"}}, {"model": "farmers.croplisting", "pk": 7, "fields": {"farmer": 2, "vegetable": 9, "quantity_kg": "1039.00", "price_per_kg": "37.79", "district": "Comilla", "season": "year_round", "harvest_date": "2026-06-07", "status": "available", "description": "Fresh Cucumber from Bogra", "created_at": "2026-04-25T09:45:41.580Z", "updated_at": "2026-04-25T09:45:41.580Z"}}, {"model": "farmers.croplisting", "pk": 8, "fields": {"farmer": 2, "vegetable": 3, "quantity_kg": "1959.00", "price_per_kg": "22.10", "district": "Rajshahi", "season": "kharif1", "harvest_date": "2026-05-11", "status": "available", "description": "Fresh Tomato from Bogra", "created_at": "2026-04-25T09:45:41.584Z", "updated_at": "2026-04-25T09:45:41.584Z"}}, {"model": "farmers.croplisting", "pk": 9, "fields": {"farmer": 5, "vegetable": 3, "quantity_kg": "4856.00", "price_per_kg": "41.46", "district": "Bogra", "season": "rabi", "harvest_date": "2026-06-08", "status": "available", "description": "Fresh Tomato from Comilla", "created_at": "2026-04-25T09:45:41.588Z", "updated_at": "2026-04-25T09:45:41.588Z"}}, {"model": "farmers.croplisting", "pk": 10, "fields": {"farmer": 1, "vegetable": 11, "quantity_kg": "1098.00", "price_per_kg": "42.52", "district": "Khulna", "season": "rabi", "harvest_date": "2026-04-22", "status": "available", "description": "Fresh Spinach from Rajshahi", "created_at": "2026-04-25T09:45:41.591Z", "updated_at": "2026-04-25T09:45:41.591Z"}}, {"model": "farmers.croplisting", "pk": 11, "fields": {"farmer": 5, "vegetable": 8, "quantity_kg": "2537.00", "price_per_kg": "53.62", "district": "Bogra", "season": "kharif1", "harvest_date": "2026-06-09", "status": "upcoming", "description": "Fresh Cabbage from Comilla", "created_at": "2026-04-25T09:45:41.597Z", "updated_at": "2026-04-25T09:45:41.597Z"}}, {"model": "farmers.croplisting", "pk": 12, "fields": {"farmer": 4, "vegetable": 3, "quantity_kg": "1175.00", "price_per_kg": "63.31", "district": "Jessore", "season": "year_round", "harvest_date": "2026-06-01", "status": "available", "description": "Fresh Tomato from Rangpur", "created_at": "2026-04-25T09:45:41.602Z", "updated_at": "2026-04-25T09:45:41.602Z"}}, {"model": "farmers.croplisting", "pk": 13, "fields": {"farmer": 2, "vegetable": 3, "quantity_kg": "400.00", "price_per_kg": "76.49", "district": "Khulna", "season": "kharif2", "harvest_date": "2026-07-15", "status": "available", "description": "Fresh Tomato from Bogra", "created_at": "2026-04-25T09:45:41.606Z", "updated_at": "2026-04-25T09:45:41.606Z"}}, {"model": "farmers.croplisting", "pk": 14, "fields": {"farmer": 2, "vegetable": 7, "quantity_kg": "2679.00", "price_per_kg": "60.35", "district": "Bogra", "season": "year_round", "harvest_date": "2026-05-21", "status": "upcoming", "description": "Fresh Cauliflower from Bogra", "created_at": "2026-04-25T09:45:41.609Z", "updated_at": "2026-04-25T09:45:41.609Z"}}, {"model": "farmers.croplisting", "pk": 15, "fields": {"farmer": 1, "vegetable": 4, "quantity_kg": "4612.00", "price_per_kg": "64.13", "district": "Khulna", "season": "kharif1", "harvest_date": "2026-05-19", "status": "available", "description": "Fresh Green Chili from Rajshahi", "created_at": "2026-04-25T09:45:41.616Z", "updated_at": "2026-04-25T09:45:41.616Z"}}, {"model": "farmers.croplisting", "pk": 16, "fields": {"farmer": 4, "vegetable": 2, "quantity_kg": "3284.00", "price_per_kg": "46.35", "district": "Dinajpur", "season": "kharif2", "harvest_date": "2026-07-17", "status": "upcoming", "description": "Fresh Onion from Rangpur", "created_at": "2026-04-25T09:45:41.620Z", "updated_at": "2026-04-25T09:45:41.620Z"}}, {"model": "farmers.croplisting", "pk": 17, "fields": {"farmer": 5, "vegetable": 10, "quantity_kg": "4591.00", "price_per_kg": "11.96", "district": "Bogra", "season": "rabi", "harvest_date": "2026-04-09", "status": "available", "description": "Fresh Pumpkin from Comilla", "created_at": "2026-04-25T09:45:41.624Z", "updated_at": "2026-04-25T09:45:41.624Z"}}, {"model": "farmers.croplisting", "pk": 18, "fields": {"farmer": 5, "vegetable": 9, "quantity_kg": "153.00", "price_per_kg": "60.33", "district": "Khulna", "season": "kharif2", "harvest_date": "2026-04-09", "status": "available", "description": "Fresh Cucumber from Comilla", "created_at": "2026-04-25T09:45:41.630Z", "updated_at": "2026-04-25T09:45:41.630Z"}}, {"model": "farmers.croplisting", "pk": 19, "fields": {"farmer": 1, "vegetable": 7, "quantity_kg": "796.00", "price_per_kg": "33.53", "district": "Rangpur", "season": "rabi", "harvest_date": "2026-07-20", "status": "available", "description": "Fresh Cauliflower from Rajshahi", "created_at": "2026-04-25T09:45:41.635Z", "updated_at": "2026-04-25T09:45:41.635Z"}}, {"model": "farmers.croplisting", "pk": 20, "fields": {"farmer": 5, "vegetable": 12, "quantity_kg": "4637.00", "price_per_kg": "36.31", "district": "Rajshahi", "season": "kharif2", "harvest_date": "2026-05-17", "status": "available", "description": "Fresh Carrot from Comilla", "created_at": "2026-04-25T09:45:41.638Z", "updated_at": "2026-04-25T09:45:41.638Z"}}, {"model": "farmers.croplisting", "pk": 21, "fields": {"farmer": 10, "vegetable": 7, "quantity_kg": "100.00", "price_per_kg": "60.00", "district": "Rangpur", "season": "rabi", "harvest_date": "2026-04-30", "status": "available", "description": "Naturally grown crop", "created_at": "2026-04-25T10:49:09.548Z", "updated_at": "2026-04-25T10:49:09.549Z"}}, {"model": "inquiries.inquiry", "pk": 1, "fields": {"exporter": 7, "farmer": 5, "crop_listing": 20, "subject": "Interested in Carrot from Rajshahi", "message": "Hello, I am interested in purchasing Carrot. Can you provide details about quality and delivery options?", "quantity_needed": "274.00", "status": "pending", "created_at": "2026-04-25T09:45:41.649Z", "updated_at": "2026-04-25T09:45:41.649Z"}}, {"model": "inquiries.inquiry", "pk": 2, "fields": {"exporter": 7, "farmer": 1, "crop_listing": 19, "subject": "Interested in Cauliflower from Rangpur", "message": "Hello, I am interested in purchasing Cauliflower. Can you provide details about quality and delivery options?", "quantity_needed": "1608.00", "status": "accepted", "created_at": "2026-04-25T09:45:41.657Z", "updated_at": "2026-04-25T09:45:41.657Z"}}, {"model": "inquiries.inquiry", "pk": 3, "fields": {"exporter": 6, "farmer": 5, "crop_listing": 18, "subject": "Interested in Cucumber from Khulna", "message": "Hello, I am interested in purchasing Cucumber. Can you provide details about quality and delivery options?", "quantity_needed": "1812.00", "status": "pending", "created_at": "2026-04-25T09:45:41.668Z", "updated_at": "2026-04-25T09:45:41.668Z"}}, {"model": "inquiries.inquiry", "pk": 4, "fields": {"exporter": 6, "farmer": 5, "crop_listing": 17, "subject": "Interested in Pumpkin from Bogra", "message": "Hello, I am interested in purchasing Pumpkin. Can you provide details about quality and delivery options?", "quantity_needed": "1240.00", "status": "responded", "created_at": "2026-04-25T09:45:41.676Z", "updated_at": "2026-04-25T09:45:41.676Z"}}, {"model": "inquiries.inquiry", "pk": 5, "fields": {"exporter": 6, "farmer": 1, "crop_listing": 15, "subject": "Interested in Green Chili from Khulna", "message": "Hello, I am interested in purchasing Green Chili. Can you provide details about quality and delivery options?", "quantity_needed": "943.00", "status": "pending", "created_at": "2026-04-25T09:45:41.687Z", "updated_at": "2026-04-25T09:45:41.687Z"}}, {"model": "inquiries.inquiry", "pk": 6, "fields": {"exporter": 6, "farmer": 5, "crop_listing": 20, "subject": "Inquiry about Carrot — 4637.00kg", "message": "ggggg", "quantity_needed": null, "status": "pending", "created_at": "2026-04-25T09:53:32.077Z", "updated_at": "2026-04-25T09:53:32.077Z"}}, {"model": "inquiries.inquiry", "pk": 7, "fields": {"exporter": 11, "farmer": 10, "crop_listing": 21, "subject": "Inquiry about Cauliflower 100.00kg", "message": "whats the last price you can offer ?", "quantity_needed": "100.00", "status": "responded", "created_at": "2026-04-25T11:02:28.671Z", "updated_at": "2026-04-25T11:04:34.151Z"}}, {"model": "inquiries.inquiryreply", "pk": 1, "fields": {"inquiry": 1, "sender": 5, "message": "Thank you for your interest. Our Carrot is of premium quality. We can arrange delivery within the week.", "created_at": "2026-04-25T09:45:41.653Z"}}, {"model": "inquiries.inquiryreply", "pk": 2, "fields": {"inquiry": 2, "sender": 1, "message": "Thank you for your interest. Our Cauliflower is of premium quality. We can arrange delivery within the week.", "created_at": "2026-04-25T09:45:41.663Z"}}, {"model": "inquiries.inquiryreply", "pk": 3, "fields": {"inquiry": 3, "sender": 5, "message": "Thank you for your interest. Our Cucumber is of premium quality. We can arrange delivery within the week.", "created_at": "2026-04-25T09:45:41.672Z"}}, {"model": "inquiries.inquiryreply", "pk": 4, "fields": {"inquiry": 4, "sender": 5, "message": "Thank you for your interest. Our Pumpkin is of premium quality. We can arrange delivery within the week.", "created_at": "2026-04-25T09:45:41.683Z"}}, {"model": "inquiries.inquiryreply", "pk": 5, "fields": {"inquiry": 5, "sender": 1, "message": "Thank you for your interest. Our Green Chili is of premium quality. We can arrange delivery within the week.", "created_at": "2026-04-25T09:45:41.692Z"}}, {"model": "inquiries.inquiryreply", "pk": 6, "fields": {"inquiry": 7, "sender": 10, "message": "i will do you 55 taka", "created_at": "2026-04-25T11:04:34.143Z"}}, {"model": "inquiries.inquiryreply", "pk": 7, "fields": {"inquiry": 7, "sender": 11, "message": "Okay done", "created_at": "2026-04-25T11:45:14.569Z"}}]
+[
+{
+  "model": "accounts.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$y7tnyixpx7ENSNotDwOxu9$HYMWfwwQ2gcozV6L9PDih1PYBIPLBwsgEnx/HL+SIVA=",
+    "last_login": "2026-04-25T09:50:48.099Z",
+    "is_superuser": false,
+    "username": "farmer1",
+    "first_name": "Rahim",
+    "last_name": "Uddin",
+    "email": "farmer1@agrolink.test",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-25T09:45:35.509Z",
+    "role": "farmer",
+    "phone": "01711111111",
+    "district": "Rajshahi",
+    "address": "",
+    "profile_picture": "",
+    "created_at": "2026-04-25T09:45:35.510Z",
+    "updated_at": "2026-04-25T09:45:36.247Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$eViNaEvqgzFsCe81QS1kGa$FQu4XbqeSM7wKlTSOCvnWL+kIom6X7lG6LRapKJJVPQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "farmer2",
+    "first_name": "Karim",
+    "last_name": "Hossain",
+    "email": "farmer2@agrolink.test",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-25T09:45:36.268Z",
+    "role": "farmer",
+    "phone": "01722222222",
+    "district": "Bogra",
+    "address": "",
+    "profile_picture": "",
+    "created_at": "2026-04-25T09:45:36.268Z",
+    "updated_at": "2026-04-25T09:45:37.019Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$lJnKR8DmS80yDbdw0MfoQo$uWXsatQz3WQ8hSoTqgxhYRkmsy5xAPiZftgRLO5Nzr4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "farmer3",
+    "first_name": "Jamal",
+    "last_name": "Ahmed",
+    "email": "farmer3@agrolink.test",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-25T09:45:37.028Z",
+    "role": "farmer",
+    "phone": "01733333333",
+    "district": "Dinajpur",
+    "address": "",
+    "profile_picture": "",
+    "created_at": "2026-04-25T09:45:37.028Z",
+    "updated_at": "2026-04-25T09:45:37.778Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$B9I335RdwkN1OUlE3o9WfA$RWSdgzT0mYsSuR2VqkImsNOdcEzzDC6mWO6LxAQZ2qE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "farmer4",
+    "first_name": "Fatema",
+    "last_name": "Begum",
+    "email": "farmer4@agrolink.test",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-25T09:45:37.784Z",
+    "role": "farmer",
+    "phone": "01744444444",
+    "district": "Rangpur",
+    "address": "",
+    "profile_picture": "",
+    "created_at": "2026-04-25T09:45:37.784Z",
+    "updated_at": "2026-04-25T09:45:38.505Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$msVg1gCoIv5Sl03rFMNIqR$Psvn9ZRRfsRzWig66ZMBH+f6hsfosvpckYWsGJCZ41g=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "farmer5",
+    "first_name": "Sumon",
+    "last_name": "Mia",
+    "email": "farmer5@agrolink.test",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-25T09:45:38.512Z",
+    "role": "farmer",
+    "phone": "01755555555",
+    "district": "Comilla",
+    "address": "",
+    "profile_picture": "",
+    "created_at": "2026-04-25T09:45:38.512Z",
+    "updated_at": "2026-04-25T09:45:39.236Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$mpK4kZ07c1EQJDY9VF9RDi$ryvIRiaFPBgNRZQBJHshnzALSAkvMvd4syXuq6HDgq0=",
+    "last_login": "2026-04-25T09:53:13.039Z",
+    "is_superuser": false,
+    "username": "exporter1",
+    "first_name": "David",
+    "last_name": "Smith",
+    "email": "exporter1@agrolink.test",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-25T09:45:39.243Z",
+    "role": "exporter",
+    "phone": "01811111111",
+    "district": "Dhaka",
+    "address": "",
+    "profile_picture": "",
+    "created_at": "2026-04-25T09:45:39.243Z",
+    "updated_at": "2026-04-25T09:45:39.994Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$dm6pL7t42jKw2ijx4x1Dv7$j2E3r6bJ7XHVu9vunGI1DrCUrLknDMMg0Kp1MV6QU9Y=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "exporter2",
+    "first_name": "Sarah",
+    "last_name": "Johnson",
+    "email": "exporter2@agrolink.test",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-25T09:45:40.002Z",
+    "role": "exporter",
+    "phone": "01822222222",
+    "district": "Chittagong",
+    "address": "",
+    "profile_picture": "",
+    "created_at": "2026-04-25T09:45:40.002Z",
+    "updated_at": "2026-04-25T09:45:40.807Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$1GOBbX2vkLIGwyjx6CLWyV$FLI6tWteeu1INMtgp049mNm0rfRO7qMQfrH2aOM8dPY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "exporter3",
+    "first_name": "Tanvir",
+    "last_name": "Rahman",
+    "email": "exporter3@agrolink.test",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-25T09:45:40.816Z",
+    "role": "exporter",
+    "phone": "01833333333",
+    "district": "Dhaka",
+    "address": "",
+    "profile_picture": "",
+    "created_at": "2026-04-25T09:45:40.816Z",
+    "updated_at": "2026-04-25T09:45:41.542Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$hQanbpaJMTTFmhRUYcYASC$ZF31RGQx2Z2NzVGqocviD43AhTrTcXxCG7hmKSVYuXA=",
+    "last_login": "2026-04-26T13:02:39.167Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Admin",
+    "last_name": "User",
+    "email": "admin@agrolink.test",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-04-25T09:45:41.697Z",
+    "role": "admin",
+    "phone": "",
+    "district": "",
+    "address": "",
+    "profile_picture": "",
+    "created_at": "2026-04-25T09:45:41.697Z",
+    "updated_at": "2026-04-25T09:45:42.439Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$qjqTjynbOjtvwfl1iGRxPG$VXYyaYzn/UHVQhUuxF7Y3P7DSWadUdOzaJWPVJXSv6U=",
+    "last_login": "2026-04-26T13:03:43.932Z",
+    "is_superuser": false,
+    "username": "anan1",
+    "first_name": "Abir",
+    "last_name": "Al Anan",
+    "email": "anan1@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-25T10:47:54.218Z",
+    "role": "farmer",
+    "phone": "0168516980",
+    "district": "Rangpur",
+    "address": "",
+    "profile_picture": "",
+    "created_at": "2026-04-25T10:47:55.278Z",
+    "updated_at": "2026-04-25T10:47:55.278Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$cCNPyXFSmaCW1gKZ1mBJKw$K3Q+yCRmgLkoN4ZkCpwrGEk6X/8Bx1+iObfJOGu8ukI=",
+    "last_login": "2026-04-26T13:05:08.199Z",
+    "is_superuser": false,
+    "username": "tushar1",
+    "first_name": "Tushar",
+    "last_name": "bhai",
+    "email": "tushar1@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-25T11:00:51.892Z",
+    "role": "exporter",
+    "phone": "0168516981",
+    "district": "Bogra",
+    "address": "",
+    "profile_picture": "profiles/images_1.jpeg",
+    "created_at": "2026-04-25T11:00:52.851Z",
+    "updated_at": "2026-04-25T11:01:33.269Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "farmers.vegetable",
+  "pk": 1,
+  "fields": {
+    "name": "Potato",
+    "local_name": "আলু",
+    "description": "Staple crop grown widely in northern Bangladesh",
+    "season": "rabi",
+    "image": "vegetables/potato.jpg",
+    "demand_score": 0.5,
+    "created_at": "2026-04-25T09:45:35.423Z"
+  }
+},
+{
+  "model": "farmers.vegetable",
+  "pk": 2,
+  "fields": {
+    "name": "Onion",
+    "local_name": "পেঁয়াজ",
+    "description": "High-demand crop with export potential",
+    "season": "rabi",
+    "image": "vegetables/onion.jpg",
+    "demand_score": 0.5,
+    "created_at": "2026-04-25T09:45:35.432Z"
+  }
+},
+{
+  "model": "farmers.vegetable",
+  "pk": 3,
+  "fields": {
+    "name": "Tomato",
+    "local_name": "টমেটো",
+    "description": "Versatile vegetable used in many cuisines",
+    "season": "rabi",
+    "image": "vegetables/tomato.jpg",
+    "demand_score": 0.5,
+    "created_at": "2026-04-25T09:45:35.439Z"
+  }
+},
+{
+  "model": "farmers.vegetable",
+  "pk": 4,
+  "fields": {
+    "name": "Green Chili",
+    "local_name": "কাঁচা মরিচ",
+    "description": "Essential spice crop",
+    "season": "year_round",
+    "image": "vegetables/green_chili_custom.png",
+    "demand_score": 0.5,
+    "created_at": "2026-04-25T09:45:35.443Z"
+  }
+},
+{
+  "model": "farmers.vegetable",
+  "pk": 5,
+  "fields": {
+    "name": "Bitter Gourd",
+    "local_name": "করলা",
+    "description": "Popular in Asian cuisine, growing export demand",
+    "season": "kharif1",
+    "image": "vegetables/bitter_gourd.jpg",
+    "demand_score": 0.5,
+    "created_at": "2026-04-25T09:45:35.452Z"
+  }
+},
+{
+  "model": "farmers.vegetable",
+  "pk": 6,
+  "fields": {
+    "name": "Eggplant",
+    "local_name": "বেগুন",
+    "description": "Widely cultivated across Bangladesh",
+    "season": "year_round",
+    "image": "vegetables/eggplant.jpg",
+    "demand_score": 0.5,
+    "created_at": "2026-04-25T09:45:35.459Z"
+  }
+},
+{
+  "model": "farmers.vegetable",
+  "pk": 7,
+  "fields": {
+    "name": "Cauliflower",
+    "local_name": "ফুলকপি",
+    "description": "High-value winter vegetable",
+    "season": "rabi",
+    "image": "vegetables/cauliflower.jpg",
+    "demand_score": 0.5,
+    "created_at": "2026-04-25T09:45:35.469Z"
+  }
+},
+{
+  "model": "farmers.vegetable",
+  "pk": 8,
+  "fields": {
+    "name": "Cabbage",
+    "local_name": "বাঁধাকপি",
+    "description": "Cool season crop with good yield",
+    "season": "rabi",
+    "image": "vegetables/cabbage.jpg",
+    "demand_score": 0.5,
+    "created_at": "2026-04-25T09:45:35.474Z"
+  }
+},
+{
+  "model": "farmers.vegetable",
+  "pk": 9,
+  "fields": {
+    "name": "Cucumber",
+    "local_name": "শসা",
+    "description": "Summer crop with good market demand",
+    "season": "kharif1",
+    "image": "vegetables/cucumber.jpg",
+    "demand_score": 0.5,
+    "created_at": "2026-04-25T09:45:35.483Z"
+  }
+},
+{
+  "model": "farmers.vegetable",
+  "pk": 10,
+  "fields": {
+    "name": "Pumpkin",
+    "local_name": "কুমড়া",
+    "description": "Nutritious and long shelf life",
+    "season": "kharif2",
+    "image": "vegetables/pumpkin_custom.jpg",
+    "demand_score": 0.5,
+    "created_at": "2026-04-25T09:45:35.489Z"
+  }
+},
+{
+  "model": "farmers.vegetable",
+  "pk": 11,
+  "fields": {
+    "name": "Spinach",
+    "local_name": "পালং শাক",
+    "description": "Nutritious leafy green",
+    "season": "rabi",
+    "image": "vegetables/spinach.jpg",
+    "demand_score": 0.5,
+    "created_at": "2026-04-25T09:45:35.497Z"
+  }
+},
+{
+  "model": "farmers.vegetable",
+  "pk": 12,
+  "fields": {
+    "name": "Carrot",
+    "local_name": "গাজর",
+    "description": "Root vegetable popular in winter",
+    "season": "rabi",
+    "image": "vegetables/carrot.jpg",
+    "demand_score": 0.5,
+    "created_at": "2026-04-25T09:45:35.504Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 1,
+  "fields": {
+    "farmer": 3,
+    "vegetable": 1,
+    "quantity_kg": "3633.00",
+    "price_per_kg": "30.55",
+    "district": "Dinajpur",
+    "season": "year_round",
+    "harvest_date": "2026-06-10",
+    "status": "available",
+    "description": "Fresh Potato from Dinajpur",
+    "created_at": "2026-04-25T09:45:41.551Z",
+    "updated_at": "2026-04-25T09:45:41.551Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 2,
+  "fields": {
+    "farmer": 5,
+    "vegetable": 3,
+    "quantity_kg": "1591.00",
+    "price_per_kg": "70.42",
+    "district": "Rangpur",
+    "season": "year_round",
+    "harvest_date": "2026-05-21",
+    "status": "available",
+    "description": "Fresh Tomato from Comilla",
+    "created_at": "2026-04-25T09:45:41.556Z",
+    "updated_at": "2026-04-25T09:45:41.556Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 3,
+  "fields": {
+    "farmer": 5,
+    "vegetable": 10,
+    "quantity_kg": "1127.00",
+    "price_per_kg": "74.39",
+    "district": "Dhaka",
+    "season": "year_round",
+    "harvest_date": "2026-06-05",
+    "status": "upcoming",
+    "description": "Fresh Pumpkin from Comilla",
+    "created_at": "2026-04-25T09:45:41.560Z",
+    "updated_at": "2026-04-25T09:45:41.560Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 4,
+  "fields": {
+    "farmer": 2,
+    "vegetable": 3,
+    "quantity_kg": "3740.00",
+    "price_per_kg": "48.55",
+    "district": "Khulna",
+    "season": "rabi",
+    "harvest_date": "2026-04-27",
+    "status": "available",
+    "description": "Fresh Tomato from Bogra",
+    "created_at": "2026-04-25T09:45:41.566Z",
+    "updated_at": "2026-04-25T09:45:41.566Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 5,
+  "fields": {
+    "farmer": 1,
+    "vegetable": 4,
+    "quantity_kg": "1893.00",
+    "price_per_kg": "26.80",
+    "district": "Comilla",
+    "season": "rabi",
+    "harvest_date": "2026-05-29",
+    "status": "available",
+    "description": "Fresh Green Chili from Rajshahi",
+    "created_at": "2026-04-25T09:45:41.570Z",
+    "updated_at": "2026-04-25T09:45:41.570Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 6,
+  "fields": {
+    "farmer": 1,
+    "vegetable": 12,
+    "quantity_kg": "2246.00",
+    "price_per_kg": "56.17",
+    "district": "Rangpur",
+    "season": "kharif1",
+    "harvest_date": "2026-07-24",
+    "status": "available",
+    "description": "Fresh Carrot from Rajshahi",
+    "created_at": "2026-04-25T09:45:41.575Z",
+    "updated_at": "2026-04-25T09:45:41.575Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 7,
+  "fields": {
+    "farmer": 2,
+    "vegetable": 9,
+    "quantity_kg": "1039.00",
+    "price_per_kg": "37.79",
+    "district": "Comilla",
+    "season": "year_round",
+    "harvest_date": "2026-06-07",
+    "status": "available",
+    "description": "Fresh Cucumber from Bogra",
+    "created_at": "2026-04-25T09:45:41.580Z",
+    "updated_at": "2026-04-25T09:45:41.580Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 8,
+  "fields": {
+    "farmer": 2,
+    "vegetable": 3,
+    "quantity_kg": "1959.00",
+    "price_per_kg": "22.10",
+    "district": "Rajshahi",
+    "season": "kharif1",
+    "harvest_date": "2026-05-11",
+    "status": "available",
+    "description": "Fresh Tomato from Bogra",
+    "created_at": "2026-04-25T09:45:41.584Z",
+    "updated_at": "2026-04-25T09:45:41.584Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 9,
+  "fields": {
+    "farmer": 5,
+    "vegetable": 3,
+    "quantity_kg": "4856.00",
+    "price_per_kg": "41.46",
+    "district": "Bogra",
+    "season": "rabi",
+    "harvest_date": "2026-06-08",
+    "status": "available",
+    "description": "Fresh Tomato from Comilla",
+    "created_at": "2026-04-25T09:45:41.588Z",
+    "updated_at": "2026-04-25T09:45:41.588Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 10,
+  "fields": {
+    "farmer": 1,
+    "vegetable": 11,
+    "quantity_kg": "1098.00",
+    "price_per_kg": "42.52",
+    "district": "Khulna",
+    "season": "rabi",
+    "harvest_date": "2026-04-22",
+    "status": "available",
+    "description": "Fresh Spinach from Rajshahi",
+    "created_at": "2026-04-25T09:45:41.591Z",
+    "updated_at": "2026-04-25T09:45:41.591Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 11,
+  "fields": {
+    "farmer": 5,
+    "vegetable": 8,
+    "quantity_kg": "2537.00",
+    "price_per_kg": "53.62",
+    "district": "Bogra",
+    "season": "kharif1",
+    "harvest_date": "2026-06-09",
+    "status": "upcoming",
+    "description": "Fresh Cabbage from Comilla",
+    "created_at": "2026-04-25T09:45:41.597Z",
+    "updated_at": "2026-04-25T09:45:41.597Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 12,
+  "fields": {
+    "farmer": 4,
+    "vegetable": 3,
+    "quantity_kg": "1175.00",
+    "price_per_kg": "63.31",
+    "district": "Jessore",
+    "season": "year_round",
+    "harvest_date": "2026-06-01",
+    "status": "available",
+    "description": "Fresh Tomato from Rangpur",
+    "created_at": "2026-04-25T09:45:41.602Z",
+    "updated_at": "2026-04-25T09:45:41.602Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 13,
+  "fields": {
+    "farmer": 2,
+    "vegetable": 3,
+    "quantity_kg": "400.00",
+    "price_per_kg": "76.49",
+    "district": "Khulna",
+    "season": "kharif2",
+    "harvest_date": "2026-07-15",
+    "status": "available",
+    "description": "Fresh Tomato from Bogra",
+    "created_at": "2026-04-25T09:45:41.606Z",
+    "updated_at": "2026-04-25T09:45:41.606Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 14,
+  "fields": {
+    "farmer": 2,
+    "vegetable": 7,
+    "quantity_kg": "2679.00",
+    "price_per_kg": "60.35",
+    "district": "Bogra",
+    "season": "year_round",
+    "harvest_date": "2026-05-21",
+    "status": "upcoming",
+    "description": "Fresh Cauliflower from Bogra",
+    "created_at": "2026-04-25T09:45:41.609Z",
+    "updated_at": "2026-04-25T09:45:41.609Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 15,
+  "fields": {
+    "farmer": 1,
+    "vegetable": 4,
+    "quantity_kg": "4612.00",
+    "price_per_kg": "64.13",
+    "district": "Khulna",
+    "season": "kharif1",
+    "harvest_date": "2026-05-19",
+    "status": "available",
+    "description": "Fresh Green Chili from Rajshahi",
+    "created_at": "2026-04-25T09:45:41.616Z",
+    "updated_at": "2026-04-25T09:45:41.616Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 16,
+  "fields": {
+    "farmer": 4,
+    "vegetable": 2,
+    "quantity_kg": "3284.00",
+    "price_per_kg": "46.35",
+    "district": "Dinajpur",
+    "season": "kharif2",
+    "harvest_date": "2026-07-17",
+    "status": "upcoming",
+    "description": "Fresh Onion from Rangpur",
+    "created_at": "2026-04-25T09:45:41.620Z",
+    "updated_at": "2026-04-25T09:45:41.620Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 17,
+  "fields": {
+    "farmer": 5,
+    "vegetable": 10,
+    "quantity_kg": "4591.00",
+    "price_per_kg": "11.96",
+    "district": "Bogra",
+    "season": "rabi",
+    "harvest_date": "2026-04-09",
+    "status": "available",
+    "description": "Fresh Pumpkin from Comilla",
+    "created_at": "2026-04-25T09:45:41.624Z",
+    "updated_at": "2026-04-25T09:45:41.624Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 18,
+  "fields": {
+    "farmer": 5,
+    "vegetable": 9,
+    "quantity_kg": "153.00",
+    "price_per_kg": "60.33",
+    "district": "Khulna",
+    "season": "kharif2",
+    "harvest_date": "2026-04-09",
+    "status": "available",
+    "description": "Fresh Cucumber from Comilla",
+    "created_at": "2026-04-25T09:45:41.630Z",
+    "updated_at": "2026-04-25T09:45:41.630Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 19,
+  "fields": {
+    "farmer": 1,
+    "vegetable": 7,
+    "quantity_kg": "796.00",
+    "price_per_kg": "33.53",
+    "district": "Rangpur",
+    "season": "rabi",
+    "harvest_date": "2026-07-20",
+    "status": "available",
+    "description": "Fresh Cauliflower from Rajshahi",
+    "created_at": "2026-04-25T09:45:41.635Z",
+    "updated_at": "2026-04-25T09:45:41.635Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 20,
+  "fields": {
+    "farmer": 5,
+    "vegetable": 12,
+    "quantity_kg": "4637.00",
+    "price_per_kg": "36.31",
+    "district": "Rajshahi",
+    "season": "kharif2",
+    "harvest_date": "2026-05-17",
+    "status": "available",
+    "description": "Fresh Carrot from Comilla",
+    "created_at": "2026-04-25T09:45:41.638Z",
+    "updated_at": "2026-04-25T09:45:41.638Z"
+  }
+},
+{
+  "model": "farmers.croplisting",
+  "pk": 21,
+  "fields": {
+    "farmer": 10,
+    "vegetable": 7,
+    "quantity_kg": "100.00",
+    "price_per_kg": "60.00",
+    "district": "Rangpur",
+    "season": "rabi",
+    "harvest_date": "2026-04-30",
+    "status": "available",
+    "description": "Naturally grown crop",
+    "created_at": "2026-04-25T10:49:09.548Z",
+    "updated_at": "2026-04-25T10:49:09.549Z"
+  }
+},
+{
+  "model": "inquiries.inquiry",
+  "pk": 1,
+  "fields": {
+    "exporter": 7,
+    "farmer": 5,
+    "crop_listing": 20,
+    "subject": "Interested in Carrot from Rajshahi",
+    "message": "Hello, I am interested in purchasing Carrot. Can you provide details about quality and delivery options?",
+    "quantity_needed": "274.00",
+    "status": "pending",
+    "created_at": "2026-04-25T09:45:41.649Z",
+    "updated_at": "2026-04-25T09:45:41.649Z"
+  }
+},
+{
+  "model": "inquiries.inquiry",
+  "pk": 2,
+  "fields": {
+    "exporter": 7,
+    "farmer": 1,
+    "crop_listing": 19,
+    "subject": "Interested in Cauliflower from Rangpur",
+    "message": "Hello, I am interested in purchasing Cauliflower. Can you provide details about quality and delivery options?",
+    "quantity_needed": "1608.00",
+    "status": "accepted",
+    "created_at": "2026-04-25T09:45:41.657Z",
+    "updated_at": "2026-04-25T09:45:41.657Z"
+  }
+},
+{
+  "model": "inquiries.inquiry",
+  "pk": 3,
+  "fields": {
+    "exporter": 6,
+    "farmer": 5,
+    "crop_listing": 18,
+    "subject": "Interested in Cucumber from Khulna",
+    "message": "Hello, I am interested in purchasing Cucumber. Can you provide details about quality and delivery options?",
+    "quantity_needed": "1812.00",
+    "status": "pending",
+    "created_at": "2026-04-25T09:45:41.668Z",
+    "updated_at": "2026-04-25T09:45:41.668Z"
+  }
+},
+{
+  "model": "inquiries.inquiry",
+  "pk": 4,
+  "fields": {
+    "exporter": 6,
+    "farmer": 5,
+    "crop_listing": 17,
+    "subject": "Interested in Pumpkin from Bogra",
+    "message": "Hello, I am interested in purchasing Pumpkin. Can you provide details about quality and delivery options?",
+    "quantity_needed": "1240.00",
+    "status": "responded",
+    "created_at": "2026-04-25T09:45:41.676Z",
+    "updated_at": "2026-04-25T09:45:41.676Z"
+  }
+},
+{
+  "model": "inquiries.inquiry",
+  "pk": 5,
+  "fields": {
+    "exporter": 6,
+    "farmer": 1,
+    "crop_listing": 15,
+    "subject": "Interested in Green Chili from Khulna",
+    "message": "Hello, I am interested in purchasing Green Chili. Can you provide details about quality and delivery options?",
+    "quantity_needed": "943.00",
+    "status": "pending",
+    "created_at": "2026-04-25T09:45:41.687Z",
+    "updated_at": "2026-04-25T09:45:41.687Z"
+  }
+},
+{
+  "model": "inquiries.inquiry",
+  "pk": 6,
+  "fields": {
+    "exporter": 6,
+    "farmer": 5,
+    "crop_listing": 20,
+    "subject": "Inquiry about Carrot — 4637.00kg",
+    "message": "ggggg",
+    "quantity_needed": null,
+    "status": "pending",
+    "created_at": "2026-04-25T09:53:32.077Z",
+    "updated_at": "2026-04-25T09:53:32.077Z"
+  }
+},
+{
+  "model": "inquiries.inquiry",
+  "pk": 7,
+  "fields": {
+    "exporter": 11,
+    "farmer": 10,
+    "crop_listing": 21,
+    "subject": "Inquiry about Cauliflower 100.00kg",
+    "message": "whats the last price you can offer ?",
+    "quantity_needed": "100.00",
+    "status": "responded",
+    "created_at": "2026-04-25T11:02:28.671Z",
+    "updated_at": "2026-04-25T11:04:34.151Z"
+  }
+},
+{
+  "model": "inquiries.inquiryreply",
+  "pk": 1,
+  "fields": {
+    "inquiry": 1,
+    "sender": 5,
+    "message": "Thank you for your interest. Our Carrot is of premium quality. We can arrange delivery within the week.",
+    "created_at": "2026-04-25T09:45:41.653Z"
+  }
+},
+{
+  "model": "inquiries.inquiryreply",
+  "pk": 2,
+  "fields": {
+    "inquiry": 2,
+    "sender": 1,
+    "message": "Thank you for your interest. Our Cauliflower is of premium quality. We can arrange delivery within the week.",
+    "created_at": "2026-04-25T09:45:41.663Z"
+  }
+},
+{
+  "model": "inquiries.inquiryreply",
+  "pk": 3,
+  "fields": {
+    "inquiry": 3,
+    "sender": 5,
+    "message": "Thank you for your interest. Our Cucumber is of premium quality. We can arrange delivery within the week.",
+    "created_at": "2026-04-25T09:45:41.672Z"
+  }
+},
+{
+  "model": "inquiries.inquiryreply",
+  "pk": 4,
+  "fields": {
+    "inquiry": 4,
+    "sender": 5,
+    "message": "Thank you for your interest. Our Pumpkin is of premium quality. We can arrange delivery within the week.",
+    "created_at": "2026-04-25T09:45:41.683Z"
+  }
+},
+{
+  "model": "inquiries.inquiryreply",
+  "pk": 5,
+  "fields": {
+    "inquiry": 5,
+    "sender": 1,
+    "message": "Thank you for your interest. Our Green Chili is of premium quality. We can arrange delivery within the week.",
+    "created_at": "2026-04-25T09:45:41.692Z"
+  }
+},
+{
+  "model": "inquiries.inquiryreply",
+  "pk": 6,
+  "fields": {
+    "inquiry": 7,
+    "sender": 10,
+    "message": "i will do you 55 taka",
+    "created_at": "2026-04-25T11:04:34.143Z"
+  }
+},
+{
+  "model": "inquiries.inquiryreply",
+  "pk": 7,
+  "fields": {
+    "inquiry": 7,
+    "sender": 11,
+    "message": "Okay done",
+    "created_at": "2026-04-25T11:45:14.569Z"
+  }
+}
+]

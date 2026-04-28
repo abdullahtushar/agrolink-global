@@ -48,3 +48,43 @@ def get_profitable_predictions():
     # Sort by profit descending and get top 3
     predictions.sort(key=lambda x: x['profit'], reverse=True)
     return predictions[:3]
+
+def get_top_profitable_crops():
+    from farmers.models import CropListing
+    from django.utils import timezone
+    import datetime
+
+    # Simple season mapping
+    current_month = timezone.now().month
+    if 3 <= current_month <= 6:
+        current_season = 'kharif1'
+    elif 7 <= current_month <= 10:
+        current_season = 'kharif2'
+    else:
+        current_season = 'rabi'
+
+    listings = CropListing.objects.filter(status='available').select_related('vegetable')
+    
+    results = []
+    estimated_cost = 30
+    
+    for listing in listings:
+        veg = listing.vegetable
+        demand_score = veg.demand_score
+        price_per_kg = float(listing.price_per_kg)
+        
+        is_in_season = (veg.season == current_season) or (veg.season == 'year_round')
+        season_factor = 1.2 if is_in_season else 0.8
+        
+        profit_score = (demand_score * price_per_kg * season_factor) - estimated_cost
+        
+        results.append({
+            'listing': listing,
+            'vegetable': veg,
+            'profit_score': round(profit_score, 2),
+            'season_factor': season_factor,
+            'is_in_season': is_in_season
+        })
+        
+    results.sort(key=lambda x: x['profit_score'], reverse=True)
+    return results[:5]

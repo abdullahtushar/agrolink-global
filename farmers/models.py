@@ -20,6 +20,7 @@ class Vegetable(models.Model):
     description = models.TextField(blank=True)
     season = models.CharField(max_length=20, choices=Season.choices, default=Season.RABI)
     image = models.ImageField(upload_to='vegetables/', blank=True, null=True)
+    demand_score = models.FloatField(default=0.5)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
